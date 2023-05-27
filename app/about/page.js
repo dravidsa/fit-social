@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function page() {
   return (
-    <div className='max-w-6x1 mx-auto space-y-4'> 
+    <div className='max-w-6x1 mx-auto space-y-4 p-6'> 
       <h1 className='text-2x1 font-medium text-amber-600 space-x-4 '>About </h1>  
       <p> 
         Fit Social is SAAS platform for enablement of Sprots and Fitness community . 

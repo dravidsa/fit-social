@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuItem from './MenuIIem'
+import MenuItem from './MenuItem'
 import {AiFillHome} from 'react-icons/ai'
 import {FcAbout} from 'react-icons'
 import {AiFillInfoCircle} from 'react-icons/ai' 

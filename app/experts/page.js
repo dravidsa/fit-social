@@ -1,19 +1,12 @@
+import React from 'react'
+
 import Image from 'next/image'
-import Results from './components/Results'
-
-const API_KEY = process.env.API_KEY ; 
-
-
-
-export default async function Home({searchParams}) {
+import ExpertResults from '../components/ExpertResults'
+export default async function Experts() {
   //const genre = searchParams.genre || "fetchTrending" 
-  const genre = searchParams.genre || "fetchTrending"
-    console.log(genre) ; 
+  
   //console.log( API_KEY )  ; 
-  const URL = `https://api.themoviedb.org/3/${
-    genre === "fetchTopRated" ? "movie/top_rated" : 
-    "trending/all/week"
-  }?api_key=${API_KEY}&Language=en-US&Page=1` ; 
+  const URL = 'http://localhost:1337/api/articles?populate=image' ; 
   console.log ( URL) ; 
   
   const res = await fetch(URL, {next : { revalidate : 10}});  
@@ -33,13 +26,13 @@ export default async function Home({searchParams}) {
   }
 
   const data = await res.json() ; 
-  const results = data.results ; 
+  const results = data.data ; 
 
-  //console.log( results) ; 
+  console.log( results) ; 
 
   return (
     <div> 
-       <Results results={results} />  
+       <ExpertResults results={results} />  
     </div>
     )
 }

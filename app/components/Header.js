@@ -8,6 +8,7 @@ import {MdGroups2} from 'react-icons/md'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import {GrUserExpert} from 'react-icons/gr' 
 import {AiFillWallet} from 'react-icons/ai'
+import {MdForum} from 'react-icons/Md'
 
 import Link from 'next/link'
 import DarkModeSwitch from './DarkModeSwitch'
@@ -23,6 +24,7 @@ export default function Header() {
         <MenuItem title="Marketplace" address="/market" Icon={AiOutlineShoppingCart} />
         <MenuItem title="Expert Corner" address="/experts" Icon={GrUserExpert} />
         <MenuItem title="Fitness Wallet" address="/wallet" Icon={AiFillWallet} />
+        <MenuItem title="Discussion Forum" address="/discussion" Icon={MdForum} />
        </div>
 
        <div className='px-6 flex items-center space-x-5'>

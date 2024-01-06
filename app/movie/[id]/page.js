@@ -7,8 +7,8 @@ async function getMovie(movieId) {
     return await res.json() ; 
 }
 export default async function MoviePage({params}) {
-const movieId = params.id ; 
-const movie = await getMovie(movieId)  ; 
+ const movieId = params.id ; 
+const movie = await getMovie(movieId)  ;
 
 
 return (

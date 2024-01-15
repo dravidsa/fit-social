@@ -24,7 +24,7 @@ export default function City() {
      
       return (
      
-        <div classnAme = "px-6 flex items-center space-x-5">
+        <div className = "px-6 flex items-center space-x-5">
      
           <label>
      

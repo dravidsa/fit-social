@@ -11,7 +11,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardTitle, MDBCardText, MDBCa
 
 export default function MentorCard() {
   return (
-    <div className="vh-100" style={{ backgroundColor: '#9de2ff' }}>
+    <div className="vh-100 space-y-4" style={{ backgroundColor: '#9de2ff' }}>
       <MDBContainer>
         <MDBRow className="justify-content-center">
           <MDBCol md="9" lg="7" xl="5" className="mt-5">

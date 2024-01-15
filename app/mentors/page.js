@@ -7,7 +7,8 @@ export default async function Mentors() {
   //const genre = searchParams.genre || "fetchTrending" 
   
   //console.log( API_KEY )  ; 
-  const URL = 'http://localhost:1337/api/mentors?populate=*' ; 
+  const URL = process.env.MENTORS_URL ; 
+  //const URL = 'http://localhost:1337/api/mentors?populate=*' ; 
   console.log ( URL) ; 
   
   const res = await fetch(URL, {next : { revalidate : 10}});  

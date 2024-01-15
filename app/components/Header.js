@@ -30,12 +30,12 @@ export default function Header() {
   return (
 
     
-    <div className='flex justify-between mx-2 mx-w-6xl sm:mx-auto items-center py-6'>
+    <div className='flex justify-between mx-2 mx-w-6xl sm:mx-auto items-center py-6 sticky top-0 bg-blue-400 bg-opacity-100 border-solid'>
       <div className='flex'>
 
       <Link href="/">
-        <h2 className='text-2xl'><span className='font-bold bg-amber-500 py-1 px-1 rounded-lg mr-1'>FIT</span>
-        <span className='text-xl hidden : sm:inline'>Social</span></h2>
+        <h2 className='text-xl'><span className='font-bold bg-amber-500 py-1 px-1 rounded-lg mr-1'>FIT</span>
+        <span className='text-xl hidden : sm:inline text-black'>Freaks</span></h2>
       </Link>
 
         <MenuItem title="Home" address="/dashboard" Icon={AiFillHome} /> 

@@ -34,7 +34,7 @@ console.log( "mentor is  " + JSON.stringify(mentor)) ;
     <Feature mentor={mentor}/>
   </div>
   <div>
-    <Service mentor={mentor}/>
+    <Testimonial mentor={mentor}/>
   </div>
   <div>
     <Medialist mentor={mentor}/>

@@ -25,20 +25,20 @@ export default function Hero({mentor}) {
       <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
         <img class="w-50 lg:w-2/6 md:w-3/6  mb-10 object-cover object-center" alt="hero" src={hero_full_url} />
         <div class="text-center lg:w-5/12 w-full">
-          <h1 className="my-4 text-5xl font-bold leading-tight">
+          <h1 className="my-4 text-3xl font-bold leading-tight">
             {headline}
           </h1>
-          <p className="text-2xl mb-8">
+          <p className="text-1xl mb-8">
             {desc}
           </p>
           <div className="flex justify-center mx-auto">
             <button
               className="hover:underline bg-white text-gray-800 font-bold rounded-full  py-4 px-8">
-              View Projects
+              Book an Appointment
             </button>
             <button
               className="ml-4 hover:underline bg-white text-gray-800 font-bold rounded-full  py-4 px-8">
-              Plugins
+              Know More
             </button>
           </div>
         </div>

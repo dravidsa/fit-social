@@ -3,14 +3,15 @@ import MentorContact from "../../components/MentorContact"
 import Hero from "../../components/Hero"
 import Testimonial from "../..//components/Testimonial"
 import Feature from "../../components/Feature"
-import Service from "../../components/Service"
+import Service from "../../components/Service" 
 import Medialist from "../../components/Medialist"
 
 
-async function getMentor(mentor_id) { 
-  const URL = `http://localhost:1337/api/mentors/${mentor_id}?populate=*` ; 
-  console.log ( "URL is " + URL ); 
-  const res = await fetch ( URL) ; 
+async function getMentor(mentor_id) {  
+  const MENTORS_URL = process.env.BASE_URL + "/api/mentors/"+ mentor_id + "?populate=*"
+  //const URL = `http://localhost:1337/api/mentors/${mentor_id}?populate=*` ; 
+  console.log ( "URL is " + MENTORS_URL ); 
+  const res = await fetch ( MENTORS_URL) ; 
   //const res = await fetch ( `https://localhost:1337/api/mentor/${mentorId}?api_key=${process.env.API_KEY}`) ; 
   return await res.json() ; 
 }

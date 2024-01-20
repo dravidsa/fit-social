@@ -30,8 +30,10 @@ export default function App() {
             identifier: username,
             password: password
         }
-        //const login = await fetch(`${publicRuntimeConfig.API_URL}/auth/local`, {
-        const login = await fetch(`http://localhost:1337/api/auth/local`, {
+        //const login = await fetch(`${publicRuntimeConfig.API_URL}/auth/local`, 
+        const LOGIN_URL = process.env.LOGIN_URL  ; 
+
+        const login = await fetch( LOGIN_URL , {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -40,24 +42,29 @@ export default function App() {
             body: JSON.stringify(loginInfo)
         })
       
+        console.log( "req is " + JSON.stringify(loginInfo))
+        const loginResponse = await login.json()
+        
         if ( !login.ok) {
+          console.log ( "error is " + JSON.stringify(loginResponse) + "-"+ loginResponse.error.status)
           throw new Error ( " Login Failed ") ; 
         }
+       else { 
+       
       
-        console.log( "req is " + JSON.stringify(loginInfo))
-      
-        const loginResponse = await login.json()
-        console.log ( "error is " + JSON.stringify(loginResponse) + "-"+ loginResponse.error.status)
+       
+       
       
         console.log ( "response is " , loginResponse)
 
         setCookie(null, 'jwt', loginResponse.jwt , {
             maxAge: 30 * 24 * 60 * 60,
             path: '/',
-        }
+          }
         )
         //const router = useRouter()
-        Router.push('/mentors') 
+       // Router.push('/mentors') 
+      }
 
     }
 
@@ -65,43 +72,41 @@ export default function App() {
 
 
   return (
-    <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
-
-      <MDBInput wrapperClass='mb-4' onChange={e => setUsername(e.target.value) }  label='Email address' id='username' type='email'/>
-      <MDBInput wrapperClass='mb-4' onChange={e => setPassword(e.target.value) } label='Password' id='password' type='password'/>
-
-      <div className="d-flex justify-content-between mx-3 mb-4">
-        <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-        <a href="!#">Forgot password?</a>
-      </div>
-
-      <MDBBtn className="mb-4"  onClick={() => handleLogin() }>Sign in</MDBBtn>
-
-      <div className="text-center">
-        <p>Not a member? <a href="#!">Register</a></p>
-        <p>or sign up with:</p>
-
-        <div className='d-flex justify-content-between mx-auto' style={{width: '40%'}}>
-          <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-            <MDBIcon fab icon='facebook-f' size="sm"/>
-          </MDBBtn>
-
-          <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-            <MDBIcon fab icon='twitter' size="sm"/>
-          </MDBBtn>
-
-          <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-            <MDBIcon fab icon='google' size="sm"/>
-          </MDBBtn>
-
-          <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
+    <div className='flex justify-center items-center py-4'> 
  
-            <MDBIcon fab icon='github' size="sm"/>
-          </MDBBtn>
+<div class="w-full max-w-xs ">
 
-        </div>
-      </div>
+<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4  border-spacing-5 ">
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Email
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" onChange={e => setUsername(e.target.value) }  />
+  </div>
+  <div class="mb-6">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+      Password
+    </label>
+    <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password"  onChange={e => setPassword(e.target.value) }  />
+    <p class="text-red-500 text-xs italic">Please choose a password.</p>
+  </div>
+  <div class="flex items-center justify-between">
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={() => handleLogin() }>
+      Sign In
+    </button>
+    <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+      Forgot Password?
+    </a>
 
-    </MDBContainer>
+   
+  </div>
+  <a class="inline-block align-baseline font-bold text-sm text-red-500 hover:text-blue-800 px-2 py-2 " href="/register">
+      Not a member? Click here to register
+    </a>
+</form>
+
+  </div> 
+ 
+  </div>
   );
   }

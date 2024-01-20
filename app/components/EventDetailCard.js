@@ -15,8 +15,14 @@ import {
 
   export default function EventDetailCard({result}) {
     console.log ( "in event detail card " + JSON.stringify(result)) ; 
+    const event_id = result.data.id ; 
+    const event_name = result.data.attributes.event_name ; 
+    console.log ( "registering for event " + event_id + "name is "  + event_name  ) ; 
+    const BASE_URL = process.env.BASE_URL  ; 
+    const IMAGE_URL = BASE_URL + result.data.attributes.event_banner.data[0].attributes.url ; 
+    console.log( "in event detail" + IMAGE_URL) ; 
     return (
-      <Link href={`/register}`} >  
+      <Link href={`/event-register?event_id=${event_id}&event_name=${event_name}`} >  
       <Card className="w-full  flex-row space-y-4">
         <CardHeader
           shadow={true}
@@ -24,8 +30,7 @@ import {
           className="m-0 w-1/5 shrink-0 rounded-r-none px-2 py-4"
         >
           <img
-           
-            src={"http://localhost:1337" + result.data.attributes.event_banner.data[0].attributes.url}
+           src={ IMAGE_URL}
             //src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
             alt="card-image"            
             className="h-75 w-100  object-cover"

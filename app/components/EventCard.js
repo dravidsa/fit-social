@@ -12,7 +12,10 @@ import {
   import Sports from "./Sports"
 
   export default function EventCard({result}) {
-    console.log ( "in event card ") ; 
+    console.log ( "in event card ") ;
+    const BASE_URL = process.env.BASE_URL  ;  
+    const IMAGE_URL = BASE_URL + result.attributes.event_banner.data[0].attributes.url ; 
+    console.log( "image url is" + IMAGE_URL); 
     return (
     <Link href={`/event/${result.id}`} >  
       <Card className="w-full  flex-row space-y-4">
@@ -23,7 +26,7 @@ import {
         >
           <img
            
-            src={"http://localhost:1337" + result.attributes.event_banner.data[0].attributes.url}
+            src={IMAGE_URL}
             //src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
             alt="card-image"            
             className="h-75 w-100  object-cover"

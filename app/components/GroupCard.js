@@ -7,12 +7,14 @@ import {FiUsers} from 'react-icons/fi'
 
 
 export default function GroupCard({result}) {
-   console.log( "sport is " + result.attributes.sports.data[0].attributes.sport_name)
+   //console.log( "sport is " + result.attributes.sports.data[0].attributes.sport_name)
+   const BASE_URL=process.env.BASE_URL  ; 
+   const IMAGE_URL= BASE_URL + result.attributes.group_img.data[0].attributes.url ; 
   return (
     <div className='flex cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200'>
       <Link href={`/group/${result.id}`} >
         <Image 
-        src={`http://localhost:1337${result.attributes.group_img.data[0].attributes.url}` } 
+        src={IMAGE_URL } 
       
         width={500} 
         height={300} 

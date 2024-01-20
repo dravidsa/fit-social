@@ -2,11 +2,12 @@ import React from 'react'
 
 export default function Hero({mentor}) {
   const hero_image = mentor.data.attributes.hero_image.data[0].attributes.url ;
-  console.log ( "image is " + JSON.stringify(mentor.data.attributes.mentor_img)) ; 
+  console.log ( "image in hero is  " + JSON.stringify(mentor.data.attributes.mentor_img)) ; 
 
   const mentor_image =  mentor.data.attributes.mentor_img.data[0].attributes.url ; 
   console.log( "hero image is " + hero_image) ; 
-  const hero_full_url = "http://localhost:1337" + mentor_image ; 
+  const BASE_URL = process.env.BASE_URL ; 
+  const hero_full_url = BASE_URL + mentor_image ; 
   const name = mentor.data.attributes.mentor_name ; 
   const desc = mentor.data.attributes.mentor_desc ; 
   console.log(  "Desc is " + desc ) ; 

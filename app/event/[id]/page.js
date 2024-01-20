@@ -17,9 +17,11 @@ import Instructions from "../../components/Instructions";
 
 
 async function getEvent(event_id) { 
-  const URL = `http://localhost:1337/api/events/${event_id}?populate=*` ; 
-  console.log ( "URL is " + URL ); 
-  const res = await fetch ( URL) ; 
+  
+  const EVENT_URL = process.env.EVENT_URL + "/"+ event_id  + "?populate=*" ; 
+  //const URL = `http://localhost:1337/api/events/${event_id}?populate=*` ; 
+  console.log ( "new event URL is " + EVENT_URL ); 
+  const res = await fetch ( EVENT_URL) ; 
   //const res = await fetch ( `https://localhost:1337/api/mentor/${mentorId}?api_key=${process.env.API_KEY}`) ; 
   return await res.json() ; 
 }

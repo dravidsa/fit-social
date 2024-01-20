@@ -7,15 +7,22 @@ import {GiPriceTag} from 'react-icons/Gi'
 
 
 export default function DashCard({result}) {
-  console.log( "sport is " + result.attributes.image.data.attributes.url)
+  //console.log( "sport is " + result.attributes.image.data.attributes.url)
+  const BASE_URL = process.env.BASE_URL  ; 
+  const IMAGE_URL = BASE_URL + result.attributes.image.data.attributes.url ; 
+  /*
+  src={`http://localhost:1337${result.attributes.image.data.attributes.url}` } 
+  */
+
   return (
+    
    <div>
     
     <div className='cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200'>
        
       <Link href={`/event/${result.id}`} >
         <Image 
-        src={`http://localhost:1337${result.attributes.image.data.attributes.url}` } 
+        src={IMAGE_URL} 
       
         width={500} 
         height={300} 

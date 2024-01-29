@@ -6,6 +6,7 @@ import {FiUsers} from 'react-icons/fi'
  
 
 
+
 export default function ExpertCard({result}) {
    console.log( "blog  is " + result.attributes.image.data[0].attributes.url)
    const BASE_URL=process.env.BASE_URL  ; 

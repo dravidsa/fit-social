@@ -14,6 +14,7 @@ import {
   export default function MentorCard2({result}) {
     //console.log ( "img is "+result.attributes.mentor_img.data[0].attributes.url) ; 
    const BASE_URL=process.env.BASE_URL  ; 
+   console.log( "base url in mentor is " + BASE_URL ) ; 
    const IMAGE_URL= BASE_URL + result.attributes.mentor_img.data[0].attributes.url ; 
     return (
     <Link href={`/mentor/${result.id}`} >  

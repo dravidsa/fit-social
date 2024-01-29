@@ -18,7 +18,9 @@ import {
     const event_id = result.data.id ; 
     const event_name = result.data.attributes.event_name ; 
     console.log ( "registering for event " + event_id + "name is "  + event_name  ) ; 
-    const BASE_URL = process.env.BASE_URL  ; 
+    const BASE_URL = process.env.BASE_URL ;
+    const REACT_APP_URL = process.env.EVENTS_URL ; 
+    console.log( "event  URL in eventDetailCard " + REACT_APP_URL ) ; 
     const IMAGE_URL = BASE_URL + result.data.attributes.event_banner.data[0].attributes.url ; 
     console.log( "in event detail" + IMAGE_URL) ; 
     return (

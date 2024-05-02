@@ -6,7 +6,7 @@ export default async function Events() {
   //const genre = searchParams.genre || "fetchTrending" 
   
   //console.log( API_KEY )  ; 
-  const URL = process.env.EVENTS_URL  ; 
+  const URL = process.env.NEXT_PUBLIC_EVENTS_URL  + "?populate=*" ; 
   //const URL = 'http://localhost:1337/api/events?populate=event_banner,mentors' ; 
   console.log ( "Ëvent URL is "+  URL) ; 
   

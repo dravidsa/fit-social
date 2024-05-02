@@ -11,7 +11,8 @@ import {GrUserExpert} from 'react-icons/gr'
 import {AiFillWallet} from 'react-icons/ai'
 import {MdForum} from 'react-icons/Md'
 import City from './City'
-import  {useRouter} from 'next/router'
+import  {useRouter} from 'next/navigation'
+
 
 import Link from 'next/link'
 import DarkModeSwitch from './DarkModeSwitch'
@@ -54,7 +55,7 @@ export default function Header() {
       <DarkModeSwitch /> 
 
       <City />
-      <Link href="/login">
+      <Link href="/auth/login">
       <span className='text-xl hidden : sm:inline'>Login</span>
         </Link> 
 

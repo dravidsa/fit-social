@@ -44,7 +44,9 @@ export default function Register() {
             role : "5"
         }
         //const login = await fetch(`${publicRuntimeConfig.API_URL}/auth/local`, {
-        const REGISTER_USER_URL = process.env.REGISTER_USER_URL ; 
+        const REGISTER_USER_URL = process.env.NEXT_PUBLIC_BASE + "/api/users" ;
+        console.log( "register URL now is  " + REGISTER_USER_URL) ; 
+         
         const login = await fetch(REGISTER_USER_URL, {
 
             method: "POST",
@@ -92,7 +94,7 @@ export default function Register() {
     <div> 
 
 
-<div class="w-full max-w-xs">
+<div class="w-full max-w-xs flex justify-center items-center py-4">
 <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4  border-spacing-5  py-5">
   <div class="mb-4">
     <label class="block text-gray-700 text-sm font-bold mb-2" for="username">

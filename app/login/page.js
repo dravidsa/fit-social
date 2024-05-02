@@ -31,7 +31,7 @@ export default function App() {
             password: password
         }
         //const login = await fetch(`${publicRuntimeConfig.API_URL}/auth/local`, 
-        const LOGIN_URL = process.env.LOGIN_URL  ; 
+        const LOGIN_URL = process.env.NEXT_PUBLIC_LOGIN_URL  ; 
 
         const login = await fetch( LOGIN_URL , {
             method: "POST",

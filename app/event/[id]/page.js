@@ -13,12 +13,14 @@ import AttendeeCatagories  from "../../components/AttendeeCatagories";
 import EventCatagories  from "../../components/EventCatagories";
 import Inclusions from "../../components/Inclusions";
 import Instructions from "../../components/Instructions";
+import EventRoute from '../../components/EventRoute'
+
 
 
 
 async function getEvent(event_id) { 
   
-  const EVENT_URL = process.env.EVENT_URL + "/"+ event_id  + "?populate=*" ; 
+  const EVENT_URL = process.env.NEXT_PUBLIC_EVENT_URL + "/"+ event_id  + "?populate=*" ; 
   //const URL = `http://localhost:1337/api/events/${event_id}?populate=*` ; 
   console.log ( "new event URL is " + EVENT_URL ); 
   const res = await fetch ( EVENT_URL) ; 
@@ -49,6 +51,9 @@ event  = await getEvent(event_id)
   
 
     <AttendeeCatagories results={event} /> 
+    
+    <EventRoute results={event} /> 
+
 
     <EventCatagories results={event}/> 
 

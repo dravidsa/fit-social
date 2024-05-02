@@ -6,9 +6,9 @@ export default async function Groups() {
   //const genre = searchParams.genre || "fetchTrending" 
   
   //console.log( API_KEY )  ; 
-  console.log ( "Base URL IS " + process.env.BASE_URL) ; 
+  console.log ( "Base URL IS " + process.env.NEXT_PUBLIC_BASE ) ; 
   
-  const URL = process.env.GROUPS_URL ; 
+  const URL = process.env.NEXT_PUBLIC_GROUPS_URL + "?populate=*" ; 
 
   console.log ( "groups URL is " + URL) ; 
 

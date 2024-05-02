@@ -13,7 +13,7 @@ import {
 
   export default function EventCard({result}) {
     console.log ( "in event card ") ;
-    const BASE_URL = process.env.BASE_URL  ;  
+    const BASE_URL = process.env.NEXT_PUBLIC_BASE  ;  
     const IMAGE_URL = BASE_URL + result.attributes.event_banner.data[0].attributes.url ; 
     console.log( "image url is" + IMAGE_URL); 
     return (

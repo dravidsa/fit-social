@@ -5,9 +5,10 @@ export default function Hero({mentor}) {
   console.log ( "image in hero is  " + JSON.stringify(mentor.data.attributes.mentor_img)) ; 
 
   const mentor_image =  mentor.data.attributes.mentor_img.data[0].attributes.url ; 
-  console.log( "hero image is " + hero_image) ; 
-  const BASE_URL = process.env.BASE_URL ; 
+ 
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE; 
   const hero_full_url = BASE_URL + mentor_image ; 
+  console.log( "hero image is now " + hero_full_url) ; 
   const name = mentor.data.attributes.mentor_name ; 
   const desc = mentor.data.attributes.mentor_desc ; 
   console.log(  "Desc is " + desc ) ; 

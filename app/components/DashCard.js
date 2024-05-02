@@ -8,7 +8,7 @@ import {GiPriceTag} from 'react-icons/Gi'
 
 export default function DashCard({result}) {
   //console.log( "sport is " + result.attributes.image.data.attributes.url)
-  const BASE_URL = process.env.BASE_URL  ; 
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE ; 
   console.log( "Base URL is dash"  + BASE_URL) ; 
   const IMAGE_URL = BASE_URL + result.attributes.image.data.attributes.url ; 
   /*

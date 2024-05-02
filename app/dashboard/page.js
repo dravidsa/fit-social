@@ -9,7 +9,7 @@ import EventDetailCard  from '../components/EventDetailCard';
 
 async function getEvent(event_id) { 
   
-  const EVENT_URL = process.env.EVENT_URL + "/"+ event_id  + "?populate=*" ; 
+  const EVENT_URL = process.env.NEXT_PUBLIC_EVENT_URL + "/"+ event_id  + "?populate=*" ; 
   //const URL = `http://localhost:1337/api/events/${event_id}?populate=*` ; 
   console.log ( "new event URL is " + EVENT_URL ); 
   const res = await fetch ( EVENT_URL) ; 
@@ -24,7 +24,7 @@ export default async function Home() {
   
   //console.log( API_KEY )  ; 
   //const URL = 'http://localhost:1337/api/metric-stats?populate=image' ; 
-  const ABOUT_URL = process.env.BASE_URL  + "/api/home-pages?populate=*" ;
+  const ABOUT_URL = process.env.NEXT_PUBLIC_BASE  + "/api/home-pages?populate=*" ;
   //const tmp = process.env.CITY_URL ; 
   console.log ( "home is "+ ABOUT_URL ) ; 
   
@@ -39,13 +39,13 @@ export default async function Home() {
   //const results = data.data ; 
   const about_image =  results.data[0].attributes.about_image.data[0].attributes.url ; 
   console.log ( "about image is "+ about_image ) ; 
-  const imageURL = process.env.BASE_URL + about_image ; 
+  const imageURL = process.env.NEXT_PUBLIC_BASE + about_image ; 
 
 
   console.log( "home is "+ JSON.stringify(results))  ; 
 
 
-  const STATS_URL = process.env.BASE_URL  + "/api/metric-stats?populate=*" ;
+  const STATS_URL = process.env.NEXT_PUBLIC_BASE  + "/api/metric-stats?populate=*" ;
   //const tmp = process.env.CITY_URL ; 
   console.log ( "home is "+ STATS_URL ) ; 
   
@@ -85,7 +85,7 @@ export default async function Home() {
 
 
 <div> 
-        <h1 className='text-lg font-bold place-text-center space-x-2 space-y-2 p-6'> FIT-Social at a glance </h1> 
+        <h1 className='text-lg font-bold place-text-center space-x-2 space-y-2 p-6'> FitFreaks at a glance </h1> 
        <DashResults results={results_stats} />  
     </div>
     
